@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX get</title>
+	<script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<h2>Metodo Get</h2>
+<div id="respuesta"></div>
+<input type="number" id="num1" placeholder="Escribe el numero uno">
+<input type="number" id="num2" placeholder="Escribe el numero dos">
+<button>Realizar Suma</button>
+<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			/*
+			$.get("ejemplo_get.html",function(data, status){
+			alert("Datos: " + data + "\nStatus: " + status);
+			});
+			*/
+			/*
+		$.get("recibe.php",{nombre: "Denisse", edad: "32"},function(respuesta){
+			$("#respuesta").html(respuesta);
+		});
+		*/
+
+		let v1 = $("#num1").val();
+		let v2 = $("#num2").val();
+		$.get("suma.php",{numero1: v1, numero2: v2 },function(respuesta){
+			alert(respuesta);
+		});
+
+		});
+	
+	});
+</script>
+</body>
+</html>

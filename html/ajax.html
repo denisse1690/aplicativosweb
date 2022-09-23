@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX</title>
+</head>
+<body>
+<script type="text/javascript">
+var peticion = false;
+ function crearPeticion(url){
+ peticion = false;
+	 if (window.XMLHttpRequest) {//Mozilla, Safari...
+
+	 	peticion = new XMLHttpRequest();
+	 	if (peticion.overrideMimeType) {
+	 		peticion.overrideMimeType('text/xml');
+	 	}
+
+	 }else if(window.ActiveXObejt){//IE
+
+	 	peticion = new ActiveXObejt("Microsoft.XMLHttp");
+	 	//MSXML2.XMLHttp
+		//MSXML2.XMLHttp.3.0
+		//MSXML2.XMLHttp.4.0
+		//MSXML2.XMLHttp.5.0
+
+	 }
+
+	 if (!peticion) {
+	 	alert("Falla: La instancia XMLHttp no fue creada");
+	 	return false;
+	 }
+
+	 peticion.onreadystatechange = generarAlerta;
+	 peticion.open('GET',url,true);
+	 peticion.send();
+
+ }
+
+ function generarAlerta() {
+
+        if (peticion.readyState == 4) {
+        	//0 sin inicializar
+        	//1 cargando
+        	//2 Cargando
+        	//3 Intectivo
+        	//4 Completo
+            if (peticion.status == 200) {
+            /*
+            200 peticion procesada en forma correcta
+            404 la URL no existe
+            500 Error interno del servidor
+            400 Peticion erronea
+            403 No tenemos permiso
+			405 No se acepta el metodo
+			414 La URL es muy larga
+			503 El servidor temporalmente no disponible
+
+            */
+                alert(peticion.responseText);
+            } else {
+                alert('Hubo problemas con la petición.');
+            }
+        }
+
+    }
+
+</script>
+<button onclick="crearPeticion('prueba.html')">Hacer la peticion</button>
+</body>
+</html>

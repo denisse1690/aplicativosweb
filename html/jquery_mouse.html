@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JQuery mouse</title>
+	<script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<h1 id="color1">Cambiare de color verde</h1>
+<h1 id="color2">Cambiare de color gris</h1>
+<input type="text" name="buscar" id="buscar" placeholder="Buscar...">
+<script>
+	$(document).ready(function(){
+		$('#color1').mouseover(function(){
+			$('#color1').css('background-color','lightgreen');
+		});
+		$('#color1').mouseout(function(){
+			$('#color1').css('background-color','gray');
+		});
+		$('#color2').mouseover(function(){
+			$('#color2').css('background-color','lightgray');
+		});
+		$('#color2').mouseout(function(){
+			$('#color2').css('background-color','white');
+		});
+
+		$('#color2').dblclick(function(){
+			alert('Se ha dado click sobre el texto en color gris');
+		});
+
+		$('#buscar').focus(function(){
+			$('#buscar').css('background-color','#FBEEE6');
+			$('#buscar').attr('placeholder','');
+		});
+		$('#buscar').blur(function(){
+			$('#buscar').css('background-color','white');
+			$('#buscar').attr('placeholder','Buscar...');
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX load</title>
+	<script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<h2>Cargar achivos externos con AJAX</h2>
+<div></div>
+<button>Carga externa con AJAX</button>
+<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			/*
+			$("div").load('ejemplo.html', function(){
+				alert("Carga completa.");
+			});
+			*/
+			$('div').load("horoscopos.xml",function(response, status){
+
+				if (status == "success") {
+					$('div').html("<ol></ol>");
+					$(response).find('horoscopo').each(function(){
+						var texto = $(this).text();
+						$('<li></li>').html(texto).appendTo('ol');
+					});
+
+					alert("Son " + $(response).find("horoscopo").length + " horoscopos")
+				}
+
+			});
+
+
+		});
+		
+	});
+</script>
+</body>
+</html>

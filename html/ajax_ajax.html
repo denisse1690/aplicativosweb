@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX</title>
+	<script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<div id="respuesta"></div>
+<input type="number" id="num1" placeholder="Escribe el numero uno">
+<input type="number" id="num2" placeholder="Escribe el numero dos">
+<button>Realizar Suma</button>
+<script>
+	$(document).ready(function(){
+		/*
+		var peticion = $.ajax({
+			method: "POST",
+			url: "ejemplo_get.html",
+			data: JSON.stringfy({nombre: "Denisse"}),
+			contentType: "aplication/json"
+		}).always(function(){
+			alert("siempre veremos esta alerta");
+		}).fail(function(){
+			alert("algo fallo");
+		}).done(function(data){
+			alert(data);//imprimir la respuesta
+		});
+		*/
+		$("button").click(function(){
+			/*
+			$.ajax({url: "ejemplo_get.html",success:function(result){
+				$("div").html(result);
+				}
+			});
+			*/
+			let v1 = $("#num1").val();
+			let v2 = $("#num2").val();
+
+			var parametros ={
+				"numero1": v1,
+				"numero2": v2
+			};
+
+			$.ajax({
+				data: parametros,
+				url: 'suma.php',
+				type: 'POST',
+				beforeSend: function(){
+					$("#respuesta").html("<img src='loading.gif'>");
+				},
+				success: function(result){
+					$("#respuesta").html(result);
+				},
+				timeout:4000,
+				error: function(){
+					$("#respuesta").html("Hay un error");
+				}
+			});
+
+		});
+
+	});
+</script>
+</body>
+</html>

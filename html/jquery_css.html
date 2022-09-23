@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JQuery CSS</title>
+	<script src="js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+	<h1>Hola</h1>
+	<button id="boton">Clic para cambiar estilo</button>
+	<img src="flor.jpg">
+	<a href="google.com">Google</a>
+	<a id="enlace" target="_blank">Jquery</a>
+<script>
+	$(document).ready(function(){
+		$('#boton').click(function(){
+			$('h1').css({
+			'fontSize':'100px',
+			'color':'red'
+		});
+
+		$('h1').addClass('inicio');
+		});
+		$('img').width('50px');
+		$('img').height('50px');
+		console.log($('a').attr('href'));
+		$('#enlace').attr({
+			'href':'http://jquery.com',
+			'title':'JQuery',
+		});
+
+		$('#enlace').removeAttr('target');
+
+	});
+
+</script>
+</body>
+</html>
