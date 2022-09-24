@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<script src="js/jquery-3.6.0.js"></script>
+	<title>Materialize Navbar</title>
+</head>
+<body>
+<div class="navbar-fixed">
+	<nav class="indigo darken-4">
+	<div class="nav-wrapper">
+		<a href="#" class="brand-logo center"><i class="material-icons">cloud</i>Logo</a>
+		<a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		<ul id="nav-mobile" class="left hide-on-med-and-down">
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="cards.html">Cards</a></li>
+			<li><a href="media.html">Media</a></li>
+			<li class="active"><a href="tablas.html">Tablas</a></li>
+			<li><a href="#" class="dropdown-trigger" data-target="dropdown1">Desplegable <i class="material-icons right">arrow_drop_down</i></a></li>
+		</ul>
+	</div>
+	</nav>
+</div>
+
+<ul class="sidenav" id="menu-movil">
+	<li><a href="index.html">Inicio</a></li>
+	<li><a href="cards.html">Cards</a></li>
+	<li><a href="media.html">Media</a></li>
+	<li class="active"><a href="tablas.html">Tablas</a></li>
+	<li><a href="#" class="dropdown-trigger" data-target="dropdown1">Desplegable <i class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+	<li><a href="#">Uno</a></li>
+	<li><a href="#">Dos</a></li>
+	<li class="divider"></li>
+	<li><a href="#">Tres</a></li>
+</ul>
+
+<nav class="indigo lighten-5">
+	<div class="nav-wrapper">
+		<form>
+			<div class="input-field">
+				<input type="search" id="buscar" required>
+				<label for="buscar" class="label-icon"><i class="material-icons">search</i></label>
+				<i class="material-icons">close</i>
+			</div>
+		</form>
+	</div>
+</nav>
+
+<h1>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Cum, saepe officiis atque veniam, officia rem voluptates mollitia consequuntur magnam, dolor praesentium ea illo eos deserunt voluptatibus tenetur repudiandae velit. Nesciunt?</h1>
+<h1>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Cum, saepe officiis atque veniam, officia rem voluptates mollitia consequuntur magnam, dolor praesentium ea illo eos deserunt voluptatibus tenetur repudiandae velit. Nesciunt?</h1>
+<h1>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Cum, saepe officiis atque veniam, officia rem voluptates mollitia consequuntur magnam, dolor praesentium ea illo eos deserunt voluptatibus tenetur repudiandae velit. Nesciunt?</h1>
+<h1>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Cum, saepe officiis atque veniam, officia rem voluptates mollitia consequuntur magnam, dolor praesentium ea illo eos deserunt voluptatibus tenetur repudiandae velit. Nesciunt?</h1>
+<h1>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Cum, saepe officiis atque veniam, officia rem voluptates mollitia consequuntur magnam, dolor praesentium ea illo eos deserunt voluptatibus tenetur repudiandae velit. Nesciunt?</h1>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.dropdown-trigger').dropdown();	
+		$('.sidenav').sidenav();
+	});
+</script>
+</body>
+</html>

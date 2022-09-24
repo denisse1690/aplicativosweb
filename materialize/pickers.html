@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<script src="js/jquery-3.6.0.js"></script>
+	<title>Materialize Media</title>
+</head>
+<body>
+<div class="row">
+	<div class="col s3">
+		<input type="text" class="datepicker" placeholder="Cumpleaños">
+	</div>
+	<div class="col s3">
+		<input type="text" class="timepicker" placeholder="Hora">
+	</div>
+</div>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+	$(document).ready(function(){
+			$('.datepicker').datepicker();
+			$('.timepicker').timepicker();
+		});
+</script>
+</body>
+</html>
